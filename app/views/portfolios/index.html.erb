@@ -1,0 +1,22 @@
+<h1>Portfolio Items</h1>
+
+
+<!--
+<%= @portfolios.inspect %>
+no equal sign means not going to render
+image_tag is a ruby helper method 
+-->
+
+
+<br><br>
+<% @portfolios.each do |portfolio| %>
+    <div>       
+         <b><%= portfolio.title %> </b><br>
+         <%= image_tag portfolio.thumb_img, style: 'width:200px;' if !portfolio.thumb_img.nil? %><br>
+         <%= portfolio.thumb_img %><br>
+         <%= portfolio.body %> <br>
+         <br>
+    </div>
+        
+<% end %>
+

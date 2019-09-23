@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @portfolio.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @portfolio.body %>
+</p>
+
+<p>
+  <strong>Thumb:</strong>
+   <%= image_tag @portfolio.thumb_img if !@portfolio.thumb_img.nil? %><br>
+</p>
+
+<%= link_to 'Back', portfolios_path %>
