@@ -12,7 +12,7 @@ image_tag is a ruby helper method
 <% @portfolios.each do |portfolio| %>
     <div>       
          <b><%= portfolio.title %> </b><br>
-         <%= image_tag portfolio.thumb_img, style: 'width:200px;' if !portfolio.thumb_img.nil? %><br>
+         <%= image_tag portfolio.thumb_img, style: 'width:200px;' unless portfolio.thumb_img.nil? %><br>
          <%= portfolio.thumb_img %><br>
          <%= portfolio.body %> <br>
          <br>
