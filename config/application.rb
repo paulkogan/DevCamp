@@ -31,5 +31,7 @@ module DevCamp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    #config.serve_static_assets = true
+    #config.assets.paths << Rails.root.join("lib", "assets/images/")
   end
 end
