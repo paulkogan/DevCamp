@@ -10,9 +10,10 @@
   <%= @portfolio.body %>
 </p>
 
+
 <p>
-  <strong>Thumb:</strong>
-   <%= image_tag @portfolio.thumb_img if !@portfolio.thumb_img.nil? %><br>
+  <strong>Photo:</strong>
+   <%= image_tag(@portfolio.thumb_img, style: 'width:400px;')  if !@portfolio.thumb_img.nil? %><br>
 </p>
 
 <%= link_to 'Back', portfolios_path %>

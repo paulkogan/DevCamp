@@ -10,8 +10,21 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    #@portfolio = Portfolio.last - faker
+    #@portfolio = Portfolio.last 
+    @portfolio = Portfolio.find(params[:id])
   end
+
+  def destroy
+    #@portfolio = Portfolio.last 
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.destroy
+
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
+    end
+  end
+
+
 
   def create
     @portfolio = Portfolio.new(portfolio_params)
