@@ -7,15 +7,23 @@ no equal sign means not going to render
 image_tag is a ruby helper method 
 -->
 
-<a href = "/portfolios/new"> Add new </a>
+<a href = "/portfolios/new"> Add new Manual </a>
 <br><br>
+<%= link_to "Ruby Link to New Item", new_portfolio_path %>
+<br><br>
+<%= link_to "Ruby Link to New Item Subdomain", new_portfolio_url, subdomain: "work"%>
+<br><br>
+
 <% @portfolios.each do |portfolio| %>
     <div>       
          <b><%= portfolio.title %> </b><br>
          <%= image_tag(portfolio.thumb_img, style: 'width:200px;') unless portfolio.thumb_img.nil? %><br>
          <%= portfolio.thumb_img %><br>
          <%= portfolio.body %> <br>
+         <%= link_to "edit", edit_portfolio_path(portfolio.id) %>
          <br>
+         <a href = "/portfolios/<%= portfolio.id %>/edit">Manual Edit</a>
+         <br><br>
     </div>
         
 <% end %>
