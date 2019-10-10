@@ -2,7 +2,7 @@
   <% if blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
+options_for_select(Blog.statuses.map {|k, v| [k.humanize.capitalize, v]}) 
       <ul>
         <% blog.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -26,8 +26,23 @@
     <%= form.text_field :score %>
   </div>
 
+
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, options_for_select(Blog.statuses.map {|k,v| [k.humanize.capitalize,k ]}) %>
+  </div>
+
+
   <div class="actions">
-    Before the submit (shared) _form + score 
     <%= form.submit %>
   </div>
 <% end %>
+
+
+
+
+
+
+
+ 
